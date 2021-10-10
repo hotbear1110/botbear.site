@@ -14,18 +14,26 @@
 
     <h1>Commands</h1>
     <div class="wrapper">
-        <div class="commands">
-    <% commands.forEach(function(command) { %>
 
-        <div class="commands__row">
-        <h2>Command: <%- command.Name %></h2>
-        <h3>Category: <%- command.Category%></h3>
-        <h3>Permission: <%- command.Perm%></h3>
-        <p>Description: <%- command.Command%></p>
+    <% categories.forEach(function(category) { %>
+        <div class="commands">
+
+            <h2><span style="font-weight:600"><%- category %>s:</span></h2>
+            <% commands.forEach(function(command) { %>
+                <%  if (command.Category === category) { %>
+                    <div class="commands__row">
+
+        <h3><span style="font-weight:600">Command: </span> bb <%- command.Name %></h3>
+        <h3><span style="font-weight:600">Category: </span><%- command.Category%></h3>
+        <h3><span style="font-weight:600">Permission: </span><%- command.Perm%></h3>
+        <p><span style="font-weight:600">Description: </span> <%- command.Command%></p>
+    </div>
+
+        <%    } %>
+        <% }) %>
     </div>
 
     <% }) %>
-</div>
 </div>
 
 </body>
