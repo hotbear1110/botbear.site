@@ -12,25 +12,42 @@
         <div class="header__image">botbear1110</div>
     </header>
 
-    <h1>Commands</h1>
+    <h1>List of commands:</h1>
+    <h2>Info:</h2>
+<p>Join/leave channel commands only works in "botbear1110" and "hotbear1110" chats.</p>
+<p>botbear1110's chat works as a proxy chat for forsen's stream, so you will get live notifications etc. in there.</p>
+<p>The myping command only pings you in chat, when the streamer is playing a game in your custom ping list.</p>
+<p>In Yabbes chat, commands that aren't notify related are disabled</p>
     <div class="wrapper">
-
+<table>
     <% categories.forEach(function(category) { %>
         <div class="commands">
-
-            <h2><span style="font-weight:600"><%- category %>s:</span></h2>
+            <tr>
+                <th><span style="font-weight:600"><%- category %>s:</span></th>
+                <th>Category:</th>
+                <th>Permission:</th>
+                <th>Description:</th>
+              </tr>
             <% commands.forEach(function(command) { %>
                 <%  if (command.Category === category) { %>
                     <div class="commands__row">
+                        <tr>
+                            <td>bb <%- command.Name %></td>
+                            <td><%- command.Category%></td>
+                            <td><%- command.Perm%></td>
+                            <td><%- command.Command%></td>
+                          </tr>
 
-        <h3><span style="font-weight:600">Command: </span> bb <%- command.Name %></h3>
-        <h3><span style="font-weight:600">Category: </span><%- command.Category%></h3>
-        <h3><span style="font-weight:600">Permission: </span><%- command.Perm%></h3>
-        <p><span style="font-weight:600">Description: </span> <%- command.Command%></p>
     </div>
 
         <%    } %>
         <% }) %>
+        <% if (category !== "Dev command") { %>
+        <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <% } %>
     </div>
 
     <% }) %>
