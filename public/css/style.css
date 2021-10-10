@@ -10,8 +10,6 @@ body {
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
-
-
     }
     
     td, th {
@@ -32,9 +30,4 @@ body {
 h2 {
     color: white;
     font-family: arial, sans-serif;
-
-}
-.wrapper {
-
-
 }
