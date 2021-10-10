@@ -8,15 +8,25 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Commands</h1>
+    <header class="header">
+        <div class="header__image">botbear1110</div>
+    </header>
 
+    <h1>Commands</h1>
+    <div class="wrapper">
+        <div class="commands">
     <% commands.forEach(function(command) { %>
 
-        <%- command.Name %>
-
+        <div class="commands__row">
+        <h2>Command: <%- command.Name %></h2>
+        <h3>Category: <%- command.Category%></h3>
+        <h3>Permission: <%- command.Perm%></h3>
+        <p>Description: <%- command.Command%></p>
+    </div>
 
     <% }) %>
-
+</div>
+</div>
 
 </body>
 </html>
