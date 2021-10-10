@@ -8,6 +8,7 @@ img { max-width: 100%; }
 h1 { 
     padding: 20px;
     color: white;
+    padding-left: 25%;
 }
 h2 {
     font-size: 1.4rem;
@@ -37,6 +38,7 @@ h3 {
     align-self: center;
     border-color: black;
     font-size: 0.8rem;
+    padding-left: 25%;
 }
 
 .commands__row {
