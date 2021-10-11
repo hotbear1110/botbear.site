@@ -29,7 +29,5 @@ app.use('/', commandRouter);
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-var io = require('socket.io').listen(httpsServer);
-
 httpServer.listen(8080);
 httpsServer.listen(2053);
