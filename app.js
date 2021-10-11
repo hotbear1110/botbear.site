@@ -1,5 +1,12 @@
 const express = require('express');
 const favicon = require('express-favicon');
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
+var privateKey  = fs.readFileSync('./cert/hotbear.xyz.key');
+var certificate = fs.readFileSync('./cert/hotbear.xyz.pem');
+
+var credentials = {key: privateKey, cert: certificate};
 
 const app = express();
 const port = 2053;
@@ -18,4 +25,11 @@ const commandRouter = require('./src/routes/commands');
 
 app.use('/', commandRouter);
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+var io = require('socket.io').listen(httpsServer);
+
+httpServer.listen(8080);
+httpsServer.listen(2053);
