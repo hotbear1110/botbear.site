@@ -2,7 +2,7 @@ const express = require('express');
 const favicon = require('express-favicon');
 
 const app = express();
-const port = 5000;
+const port = 2053;
 
 app.use(favicon(__dirname + '/public/img/LETSPEPE.png'));
 app.use(express.static('public'));
