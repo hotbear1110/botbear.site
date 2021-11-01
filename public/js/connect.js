@@ -9,10 +9,7 @@ const con = mysql.createConnection({
   });
   
   con.on("error", (err) => {
-    if (err.fatal) {
-      con.destroy();
-    }
-    throw err;
+    console.log(err)
   });
 
   module.exports = { con };
