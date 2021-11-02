@@ -9,6 +9,7 @@ const con = mysql.createConnection({
   });
   
   con.on("error", (err) => {
+    con.destroy();
     console.log(err)
   });
 
