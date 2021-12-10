@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,51 +8,64 @@
     <title>Commands</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <h1>List of commands:</h1>
     <h2>Info:</h2>
-<p>Join/leave channel commands only work in "botbear1110" and "hotbear1110" chats.</p>
-<p>The broadcaster and mods can disable any non core command if they want. Check the disable/enable commands.</p>
-<p>The broadcaster and mods can also disable the title, game, live or cookie notifications. Check the disable/enable commands.</p>
-<p>botbear1110's chat works as a proxy chat for forsen's stream, so you will get live notifications etc. in there.</p>
-<p>The myping command only pings you in chat, when the streamer is playing a game in your custom ping list.</p>
+    <p>Join/leave channel commands only work in "botbear1110" and "hotbear1110" chats.</p>
+    <p>The broadcaster and mods can disable any non core command if they want. Check the disable/enable commands.</p>
+    <p>The broadcaster and mods can also disable the title, game, live or cookie notifications. Check the disable/enable
+        commands.</p>
+    <p>botbear1110's chat works as a proxy chat for forsen's stream, so you will get live notifications etc. in there.
+    </p>
+    <p>The myping command only pings you in chat, when the streamer is playing a game in your custom ping list.</p>
     <div class="wrapper">
-<table>
-    <% categories.forEach(function(category) { %>
-        <div class="commands">
-            <tr>
-                <th><span style="font-weight:600"><%- category %>s:</span></th>
-                <th>Category:</th>
-                <th>Permission:</th>
-                <th>Description:</th>
-              </tr>
-            <% commands.forEach(function(command) { %>
-                <%  if (command.Category === category) { %>
-                    <div class="commands__row">
-                        <tr>
-                            <td>bb <%- command.Name %></td>
-                            <td><%- command.Category%></td>
-                            <td><%- command.Perm%></td>
-                            <td><%- command.Command%></td>
-                          </tr>
+        <table>
+            <% categories.forEach(function(category) { %>
+                <div class="commands">
+                    <tr>
+                        <th><span style="font-weight:600">
+                                <%- category %>s:
+                            </span></th>
+                        <th>Category:</th>
+                        <th>Permission:</th>
+                        <th>Description:</th>
+                    </tr>
+                    <% commands.forEach(function(command) { %>
+                        <% if (command.Category===category) { %>
+                            <div class="commands__row">
+                                <tr>
+                                    <td>bb <%- command.Name %>
+                                    </td>
+                                    <td>
+                                        <%- command.Category%>
+                                    </td>
+                                    <td>
+                                        <%- command.Perm%>
+                                    </td>
+                                    <td>
+                                        <%- command.Command%>
+                                    </td>
+                                </tr>
 
+                            </div>
+
+                            <% } %>
+                                <% }) %>
+                                    <% if (category !=="Dev command" ) { %>
+                                        <tr class="space">
+                                            <td class="space"></td>
+                                            <td class="space"></td>
+                                            <td class="space"></td>
+                                            <td class="space"></td>
+                                        </tr>
+                                        <% } %>
+                </div>
+
+                <% }) %>
+        </table>
     </div>
-
-        <%    } %>
-        <% }) %>
-        <% if (category !== "Dev command") { %>
-        <tr class="space">
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-            <td class="space"></td>
-          </tr>
-          <% } %>
-    </div>
-
-    <% }) %>
-</table>
-</div>
 
 </body>
+
 </html>
