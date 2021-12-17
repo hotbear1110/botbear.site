@@ -3,8 +3,8 @@ const favicon = require('express-favicon');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var privateKey = fs.readFileSync('/etc/letsencrypt/live/hotbear.xyz/privkey.pem');
-var certificate = fs.readFileSync('/etc/letsencrypt/live/hotbear.xyz/fullchain.pem');
+var privateKey = fs.readFileSync('/../../../etc/letsencrypt/live/hotbear.xyz/privkey.pem');
+var certificate = fs.readFileSync('/../../../etc/letsencrypt/live/hotbear.xyz/fullchain.pem');
 
 var credentials = { key: privateKey, cert: certificate };
 
