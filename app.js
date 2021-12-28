@@ -22,8 +22,10 @@ app.set('view engine', 'ejs');
 
 
 const commandRouter = require('./src/routes/commands');
+const suggestionRouter = require('./src/routes/suggestions');
 
 app.use('/', commandRouter);
+app.use('/suggestions', suggestionRouter);
 
 
 var httpServer = http.createServer(app);
