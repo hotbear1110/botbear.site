@@ -21,20 +21,20 @@
                     <th>Status:</th>
                     <th>Description:</th>
                 </tr>
-                <% commands.forEach(function(command) { %>
+                <% suggesions.forEach(function(suggesion) { %>
                     <div class="commands__row">
                         <tr>
                             <td>
-                                <%- suggesions.User %>
+                                <%- suggesion.User %>
                             </td>
                             <td>
-                                <%- suggesions.Suggesion%>
+                                <%- suggesion.Suggesion%>
                             </td>
                             <td>
-                                <%- suggesions.Status%>
+                                <%- suggesion.Status%>
                             </td>
                             <td>
-                                <%- suggesions.Description%>
+                                <%- suggesion.Description%>
                             </td>
                         </tr>
 
