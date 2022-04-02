@@ -26,7 +26,7 @@ const suggestionRouter = require('./src/routes/suggestions');
 
 app.use('/', commandRouter);
 app.use('/suggestions', suggestionRouter);
-const path = require('./static')
+const path = require('./static/reddit.png')
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
 var httpServer = http.createServer(app);
