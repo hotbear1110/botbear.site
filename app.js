@@ -25,7 +25,7 @@ const commandRouter = require('./src/routes/commands');
 const suggestionRouter = require('./src/routes/suggestions');
 
 app.use('/', commandRouter);
-app.use('/suggestions', suggestionRouter);
+app.use('/suggestions', express.static((__dirname + 'static/reddit.png')));
 app.use('/static', express.static((__dirname + 'static/reddit.png')))
 
 var httpServer = http.createServer(app);
