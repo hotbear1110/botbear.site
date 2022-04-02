@@ -27,7 +27,7 @@ const suggestionRouter = require('./src/routes/suggestions');
 app.use('/', commandRouter);
 app.use('/suggestions', suggestionRouter);
 const path = require('path')
-app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/static', express.static(path.join(__dirname, 'static')))
 
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
