@@ -37,6 +37,7 @@
                             </span></th>
                         <th>Category:</th>
                         <th>Permission:</th>
+                        <th>Cooldown:</th>
                         <th>Description:</th>
                     </tr>
                     <% commands.forEach(function(command) { %>
@@ -50,6 +51,9 @@
                                     </td>
                                     <td>
                                         <%- command.Perm%>
+                                    </td>
+                                    <td>
+                                        <%- command.Cooldown%>s
                                     </td>
                                     <td>
                                         <%- command.Command%>
