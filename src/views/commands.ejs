@@ -42,36 +42,40 @@
                     </tr>
                     <% commands.forEach(function(command) { %>
                         <% if (command.Category===category) { %>
-                            <div class="commands__row">
-                                <tr>
-                                    <td>bb <%- command.Name %>
-                                    </td>
-                                    <td>
-                                        <%- command.Category%>
-                                    </td>
-                                    <td>
-                                        <%- command.Perm%>
-                                    </td>
-                                    <td>
-                                        <%- command.Cooldown%>s
-                                    </td>
-                                    <td>
-                                        <%- command.Command%>
-                                    </td>
-                                </tr>
+                            <% let cooldown=command.Cooldown; %>
+                                <% if (!command.Cooldown) { %>
+                                    <% cooldown=3;
+                                    <%} %>
+                                        <div class="commands__row">
+                                            <tr>
+                                                <td>bb <%- command.Name %>
+                                                </td>
+                                                <td>
+                                                    <%- command.Category%>
+                                                </td>
+                                                <td>
+                                                    <%- command.Perm%>
+                                                </td>
+                                                <td>
+                                                    <%- cooldown%>s
+                                                </td>
+                                                <td>
+                                                    <%- command.Command%>
+                                                </td>
+                                            </tr>
 
-                            </div>
+                                        </div>
 
-                            <% } %>
-                                <% }) %>
-                                    <% if (category !=="Dev command" ) { %>
-                                        <tr class="space">
-                                            <td class="space"></td>
-                                            <td class="space"></td>
-                                            <td class="space"></td>
-                                            <td class="space"></td>
-                                        </tr>
                                         <% } %>
+                                            <% }) %>
+                                                <% if (category !=="Dev command" ) { %>
+                                                    <tr class="space">
+                                                        <td class="space"></td>
+                                                        <td class="space"></td>
+                                                        <td class="space"></td>
+                                                        <td class="space"></td>
+                                                    </tr>
+                                                    <% } %>
                 </div>
 
                 <% }) %>
