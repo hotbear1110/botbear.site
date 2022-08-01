@@ -1,15 +1,10 @@
+require('../tools/webhook.js');
 const express = require('express');
 const favicon = require('express-favicon');
-var fs = require('fs');
 var http = require('http');
-var https = require('https');
-var privateKey = fs.readFileSync('/etc/letsencrypt/live/hotbear.xyz/privkey.pem');
-var certificate = fs.readFileSync('/etc/letsencrypt/live/hotbear.xyz/fullchain.pem');
 
-var credentials = { key: privateKey, cert: certificate };
 
 const app = express();
-const port = 2053;
 
 app.use(favicon(__dirname + '/public/img/LETSPEPE.png'));
 app.use(express.static('public'));
@@ -28,7 +23,5 @@ app.use('/', commandRouter);
 app.use('/suggestions', suggestionRouter);
 
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(3000);
-httpsServer.listen(4000);
+httpServer.listen(4000);
