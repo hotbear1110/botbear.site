@@ -1,4 +1,3 @@
-require('../tools/webhook.js');
 const express = require('express');
 const favicon = require('express-favicon');
 var http = require('http');
@@ -25,3 +24,4 @@ app.use('/suggestions', suggestionRouter);
 var httpServer = http.createServer(app);
 
 httpServer.listen(4000);
+require('../tools/webhook.js');
